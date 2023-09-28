@@ -1,6 +1,8 @@
 package com.electra.transactions.createTransactions;
 
 
+import com.electra.transactions.createTransactions.dto.TransactionRequest;
+import com.electra.transactions.createTransactions.dto.TransactionResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +22,7 @@ public class TransactionResource {
 
     @PostMapping
     private ResponseEntity<TransactionResponse> createTransaction(@RequestBody TransactionRequest transactionRequest){
-        log.info("Create transaction");
+        log.info("{TransactionResource -> createTransaction}");
         TransactionResponse transactionResponse = transactionService.save(transactionRequest);
         return new ResponseEntity<>(transactionResponse, HttpStatus.CREATED);
     }

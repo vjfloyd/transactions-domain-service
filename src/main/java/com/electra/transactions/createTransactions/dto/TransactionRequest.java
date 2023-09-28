@@ -1,4 +1,4 @@
-package com.electra.transactions.createTransactions;
+package com.electra.transactions.createTransactions.dto;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
