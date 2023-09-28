@@ -1,0 +1,41 @@
+server:
+  port: 8082
+#logging:
+#  level:
+#    org.springframework.web: TRACE
+#    com.company: TRACE
+#  file: /Users/victor/jobs/erplab.log
+#  pattern:
+#    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+#    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+spring:
+  sql:
+   init:
+    mode: always
+  datasource:
+    url: jdbc:h2:mem:transactions
+    username: sa
+    password: 1234
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+  h2:
+    console.enabled: true
+info:
+  app:
+    name: Erp Product services
+    description: Api Domain transactions
+    version: 1.0.0
+management:
+  endpoints:
+    web:
+      base-path: /domain-services/v1/transactions
+      path-mapping:
+        health: health-status
+  endpoint:
+    health:
+      show-details: always
+
+#debug: true
+
